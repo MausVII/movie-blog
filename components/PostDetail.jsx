@@ -42,11 +42,12 @@ const PostDetail = ({ post }) => {
 
     return (
         <div className='bg-white shadow-lg rounded-lg lg:p-8 pb-12 mb-8'>
-            <div className='relative overflow-hidden shadow-md mb-6'>
+            <div className='relative overflow-hidden shadow-md mb-6 flex justify-center'>
                 <img src={post.featuredImage.url} tag={post.title}
                     className='object-top h-full w-full rounded-t-lg'
                 />
             </div>
+            
             <div className='px-4 lg:px-0'>
                 <div className='flex items-center mb-8 w-full'>
                     {/* <div className='flex items-center mb-4 lg:mb-0 w-full lg:w-auto mr-8'>
@@ -60,6 +61,13 @@ const PostDetail = ({ post }) => {
                         </svg>
                         <span>{moment(post.createdAt).format("MMM DD, YYYY")}</span>
                     </div>
+                </div>
+                <div>
+                    <details className='mb-2 p-4 rounded-lg bg-gray-500 text-white'>
+                        <summary className='text-xl select-none cursor-pointer'>Cast</summary>
+                        <p className='mb-2'>Director: {post.director}</p>
+                        {post.cast.map((actor) => <p>&nbsp;&nbsp;&nbsp;&nbsp;{actor}</p>)}
+                    </details>
                 </div>
                 <h1 className='mb-8 text-3xl font-semibold'>{post.title}</h1>
                 {post.content.raw.children.map((typeObj, index) => {

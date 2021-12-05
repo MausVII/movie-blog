@@ -61,18 +61,17 @@ export const getPosts = async () => {
         post(where: {slug: $slug}) {
           title
           excerpt
+          director
+          cast
+          slug
           featuredImage {
             url
           }
-          author{
+          author {
             name
             bio
-            photo {
-              url
-            }
+            createdAt
           }
-          createdAt
-          slug
           content {
             raw
           }
