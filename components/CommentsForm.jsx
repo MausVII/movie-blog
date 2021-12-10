@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef} from 'react'
-import { postComment } from '../Services'
+import { postComment } from '../services'
 
 export const CommentsForm = ({slug}) => {
 
